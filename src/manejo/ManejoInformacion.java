@@ -10,4 +10,13 @@ package manejo;
  */
 public class ManejoInformacion {
     
+    private static ManejoInformacion manejo;
+
+    public static ManejoInformacion getManejo() {
+        if (manejo == null) {
+            manejo = new ManejoInformacion();
+        }
+        return manejo;
+    }
+    
 }

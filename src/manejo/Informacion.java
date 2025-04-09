@@ -10,4 +10,20 @@ package manejo;
  */
 public class Informacion {
     
+    private String nombreNino;
+    private int identificacionNino;
+    private int edad;
+    private int estatura;
+    private int peso;
+    private int numRegistroCivil;
+    private String municipio;
+    private String nomRepresentante;
+    private String parentesco;
+    private int idRepresentante;
+    private Informacion siguiente;
+
+    public Informacion(){
+
+    }
+
 }

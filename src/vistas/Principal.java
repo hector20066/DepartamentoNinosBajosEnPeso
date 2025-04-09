@@ -13,6 +13,11 @@ public class Principal {
     public static void main(String[]args){
         
         DepartamentoCuidado departamento = new DepartamentoCuidado();
+        ReporteGeneral reporte = new ReporteGeneral();
+
+        departamento.setReportes(reporte);
+        reporte.setDepartamentoCuidado(departamento);
+
         departamento.setVisible(true);
         departamento.setLocationRelativeTo(null);
         departamento.setResizable(false);

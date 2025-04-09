@@ -4,17 +4,32 @@
  */
 package vistas;
 
+import javax.swing.table.DefaultTableModel;
+
+import manejo.*;
+
 /**
  *
  * @author Ing. Hector Acevedo
  */
 public class ReporteGeneral extends javax.swing.JFrame {
 
+    ManejoInformacion manejo = ManejoInformacion.getManejo();
+    private DepartamentoCuidado departamento;
+    DefaultTableModel modeloMonteria = new DefaultTableModel();
+
     /**
      * Creates new form ReporteGeneral
      */
     public ReporteGeneral() {
         initComponents();
+        String titulos[] = new String[]{"NOMBRE DEL NIÑ@", "IDENTIFICACION(NIÑ@)", "PESO", "ESTATURA", "EDAD", "REPRESENTANTE", "IDENTIFICACION", "PARENTESCO"};
+        modeloMonteria.setColumnIdentifiers(titulos);
+        jtbl_reporteMonterial.setModel(modeloMonteria);
+    }
+
+    public void setDepartamentoCuidado(DepartamentoCuidado departamento){
+        this.departamento = departamento;
     }
 
     /**
@@ -488,7 +503,10 @@ public class ReporteGeneral extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_aceptarLoricaActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
-        // TODO add your handling code here:
+        departamento.setVisible(true);
+        departamento.setLocationRelativeTo(null);
+        departamento.setResizable(false);
+        this.setVisible(false);
     }//GEN-LAST:event_btn_regresarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -506,7 +524,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }

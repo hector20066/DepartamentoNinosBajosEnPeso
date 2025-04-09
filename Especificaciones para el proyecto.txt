@@ -1,0 +1,17 @@
+• El programa departamental de niños bajos en peso, quiere recolectar la información de los niños entre uno y seis años de los municipios de Sahagún, Montería y Lorica. Entre los datos relevantes del representante del niño (madre o padre) están la identificación y el nombre. En cuanto al niño se requiere tener el número de registro civil, el nombre, la talla y peso. Tengan en cuenta que un representante puede tener registrados hasta 2 niños.
+Para la solución de la aplicación se deben implementar en Java las clases necesarias que permitan llenar una lista enlazada, que guarde la información recolectada de los niños en cada municipio. El programa debe realizar las siguientes operaciones sobre los nodos almacenados en la lista enlazada:
+
+	o Agregar la información del niño y su representante al final de la lista.
+	o Insertar la información de un nuevo niño, entre dos nodos existentes.
+	o Agregar la información de un niño y su representante al principio de la lista (agregar nodos por la cabeza de la lista).
+	o Buscar la información de un niño pasando como dato de búsqueda la identificación el número de registro civil.
+	o Ordenar la información de la lista teniendo en cuenta el peso de los niños registrados.
+	o Eliminar la información de un niño y su representante.
+
+El director del programa departamental de niños bajos en peso requiere que la aplicación cuente con un menú de opciones para realizar las operaciones descritas anteriormente y para generar los siguientes informes sobre los datos almacenados en la lista:
+
+	o Generar un listado por municipios, con la información de todos los niños registrados; se debe tener un consolidado de cuántos 	  niños tiene el programa en cada municipio.
+	o Se considera que los niños entre 2 y 3 años con un peso menor de 15 kilos están bajos de peso, lo mismo para los niños entre 4 y 	  6 años que pesan menos de 25 kilos. La
+	  dirección quiere un listado con la información de los niños que estén en estas    	   	  condiciones 	y saber las cantidades en cada municipio para enviar unos mercados con
+	  una dieta especial.
+	o Los niños entre 4 y 6 años que midan menos de un metro de estatura se consideran que están bajos de estatura, por esta razón se   	  requiere saber la cantidad de niños que 	  están bajos de talla en cada municipio.

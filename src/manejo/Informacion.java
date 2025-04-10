@@ -71,18 +71,61 @@ public class Informacion {
     }
 
     //Metodos getters
+    public String getNombreNino() {
+        return nombreNino;
+    }
+
+    public int getIdentificacionNino() {
+        return identificacionNino;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public int getEstatura() {
+        return estatura;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public int getNumRegistroCivil() {
+        return numRegistroCivil;
+    }
+
+    public String getMunicipio() {
+        return municipio;
+    }
+
+    public String getNomRepresentante() {
+        return nomRepresentante;
+    }
+
+    public String getParentesco() {
+        return parentesco;
+    }
+
+    public int getIdRepresentante() {
+        return idRepresentante;
+    }
+
+    public Informacion getSiguiente() {
+        return siguiente;
+    }
 
     public void copiarNodo(Informacion nodo){
-        this.nombreNino = nodo.getNombreNino;
-        this.identificacionNino = nodo.getIdentificacionNino;
-        this.edad = nodo.getEdad;
-        this.estatura = nodo.getEstatura;
-        this.peso = nodo.getPeso;
-        this.numRegistroCivil = nodo.getNumRegistroCivil;
-        this.municipio = nodo.getMunicipio;
-        this.nomRepresentante = nodo.getNomRepresentante;
-        this.parentesco = nodo.getParentesco;
-        this.idRepresentante = nodo.getIdRepresentante;
+        this.nombreNino = nodo.getNombreNino();
+        this.identificacionNino = nodo.getIdentificacionNino();
+        this.edad = nodo.getEdad();
+        this.estatura = nodo.getEstatura();
+        this.peso = nodo.getPeso();
+        this.numRegistroCivil = nodo.getNumRegistroCivil();
+        this.municipio = nodo.getMunicipio();
+        this.nomRepresentante = nodo.getNomRepresentante();
+        this.parentesco = nodo.getParentesco();
+        this.idRepresentante = nodo.getIdRepresentante();
     }
 
 }

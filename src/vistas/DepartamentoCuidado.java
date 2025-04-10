@@ -415,6 +415,24 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         cbo_opciones.setSelectedIndex(0);
     }
 
+    private void infoEncontrada(Informacion informacion){
+        txt_nombreNino.setText(informacion.getNombreNino());
+        txt_identificacionNino.setText(String.valueOf(informacion.getIdentificacionNino()));
+        txt_edad.setText(String.valueOf(informacion.getEdad()));
+        txt_estatura.setText(String.valueOf(informacion.getEstatura()));
+        txt_peso.setText(String.valueOf(informacion.getPeso()));
+        txt_registroCivil.setText(String.valueOf(informacion.getNumRegistroCivil()));
+        cbo_municipio.setSelectedItem(informacion.getMunicipio());
+        txt_representante.setText(informacion.getNomRepresentante());
+        txt_idRepresentante.setText(String.valueOf(informacion.getIdRepresentante()));
+
+        if(informacion.getParentesco().equals("Madre") || informacion.getParentesco().equals("Padre")){
+            cbo_parentesco.setSelectedItem(informacion.getParentesco());
+        }else{
+            txt_buscar.setText(informacion.getParentesco());
+        }
+    }
+
     private void btn_guardarCabezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCabezaActionPerformed
         try {
             Informacion informacion = new Informacion();
@@ -455,27 +473,48 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
 
     private void btn_guardarFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarFinalActionPerformed
         try {
-
             Informacion guardarInfo = new Informacion();
             llenar(guardarInfo);
 
             manejo.agregarNodo(guardarInfo);
             limpiarCampos();
             JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente entre dos nodos", null, JOptionPane.INFORMATION_MESSAGE);
-            
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al guargar la informacion entre dos nodos", null, JOptionPane.ERROR_MESSAGE);
         }
-
-            
-        
     }//GEN-LAST:event_btn_guardarFinalActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         try {
+            int identificacion = Integer.parseInt(txt_buscar.getText());
+            int opcion = cbo_opciones.getSelectedIndex();
+            Informacion informacion = manejo.buscar(identificacion);
+
+            switch(opcion){
+                case 0: //Buscar la informacion
+                    if(informacion != null){
+                        infoEncontrada(informacion);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No se ha podido encontrar la informacion del niño, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
+                        txt_buscar.grabFocus();
+                    }
+                    break;
+                case 1: //Eliminar la informacion
+                    if(informacion != null){
+                        manejo.eliminar(informacion);
+                        JOptionPane.showMessageDialog(null, "Se ha eliminado la informacion del niño correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                        limpiarCampos();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No se ha podido encontrar la informacion del niño, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
+                        txt_buscar.grabFocus();
+                    }
+                    break;
+            }
             
         } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Se produjo un error al ejecutar esta accion.");
         }
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
@@ -488,11 +527,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_VerReporteActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-<<<<<<< HEAD
-        
-=======
         System.exit(0);
->>>>>>> fac02c52bebea2e3ce50a3417ba2b46cea79f84d
     }//GEN-LAST:event_btn_salirActionPerformed
 
     /**

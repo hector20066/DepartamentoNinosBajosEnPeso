@@ -34,6 +34,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
         //Se cargan los datos en las tablas de los departamentos
         cargarInfoMonteria();
+        cargar
     }
 
     public void setDepartamentoCuidado(DepartamentoCuidado departamento) {
@@ -622,7 +623,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //Mostrar datos en las tablasss
+    //Mostrar datos en las tablas
     private void cargarInfoMonteria() {
         Informacion temp = manejo.getCabeza();
         while (temp != null) {

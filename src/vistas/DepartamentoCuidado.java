@@ -384,8 +384,18 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
             informacion.setNomRepresentante(nomRepresentante);
             informacion.setParentesco(parentesco);
             informacion.setIdRepresentante(idRepresentante);
+        }else{
+            informacion.setNombreNino(nino);
+            informacion.setIdentificacionNino(idNino);
+            informacion.setEdad(edad);
+            informacion.setEstatura(estatura);
+            informacion.setPeso(peso);
+            informacion.setNumRegistroCivil(numRegistroCivil);
+            informacion.setMunicipio(municipio);
+            informacion.setNomRepresentante(nomRepresentante);
+            informacion.setParentesco(parentesco);
+            informacion.setIdRepresentante(idRepresentante);
         }
-        
     }
 
     private void limpiarCampos(){

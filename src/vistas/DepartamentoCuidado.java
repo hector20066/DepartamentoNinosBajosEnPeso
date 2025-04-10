@@ -139,6 +139,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
 
         btn_guardarFinal.setText("GUARDAR AL FINAL");
         btn_guardarFinal.addActionListener(new java.awt.event.ActionListener() {
+
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_guardarFinalActionPerformed(evt);
             }
@@ -454,9 +455,21 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
 
     private void btn_guardarFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarFinalActionPerformed
         try {
+
+            Informacion guardarInfo = new Informacion();
+            llenar(guardarInfo);
+
+            manejo.agregarNodo(guardarInfo);
+            limpiarCampos();
+            JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente entre dos nodos", null, JOptionPane.INFORMATION_MESSAGE);
             
         } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al guargar la informacion entre dos nodos", null, JOptionPane.ERROR_MESSAGE);
         }
+
+            
+        
     }//GEN-LAST:event_btn_guardarFinalActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
@@ -475,7 +488,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_VerReporteActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        // TODO add your handling code here:
+        System.exit(0);
     }//GEN-LAST:event_btn_salirActionPerformed
 
     /**

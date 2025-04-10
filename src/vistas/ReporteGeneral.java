@@ -19,14 +19,13 @@ public class ReporteGeneral extends javax.swing.JFrame {
     DefaultTableModel modeloSahagun = new DefaultTableModel();
     DefaultTableModel modeloLorica = new DefaultTableModel();
 
-
     /**
      * Creates new form ReporteGeneral
      */
     public ReporteGeneral() {
         initComponents();
-        String titulos[] = new String[] { "NOMBRE DEL NIÑ@", "IDENTIFICACION(NIÑ@)", "PESO", "ESTATURA", "EDAD",
-                "REPRESENTANTE", "IDENTIFICACION", "PARENTESCO" };
+        String titulos[] = new String[]{"NOMBRE DEL NIÑ@", "IDENTIFICACION(NIÑ@)", "PESO", "ESTATURA", "EDAD",
+            "REPRESENTANTE", "IDENTIFICACION", "PARENTESCO"};
         modeloMonteria.setColumnIdentifiers(titulos);
         jtbl_reporteMonterial.setModel(modeloMonteria);
         modeloSahagun.setColumnIdentifiers(titulos);
@@ -117,14 +116,14 @@ public class ReporteGeneral extends javax.swing.JFrame {
         jLabel3.setText("Reporte del municipio de Monteria:");
 
         jtbl_reporteMonterial.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null }
+                new Object[][]{
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
                 },
-                new String[] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
+                new String[]{
+                    "Title 1", "Title 2", "Title 3", "Title 4"
                 }));
         jScrollPane1.setViewportView(jtbl_reporteMonterial);
 
@@ -138,7 +137,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
         jLabel17.setText("Identificacion (niñ@):");
 
-        txt_opcionesMonteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buscar", "Eliminar" }));
+        txt_opcionesMonteria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Buscar", "Eliminar"}));
 
         btn_aceptarMonteria.setText("ACEPTAR");
         btn_aceptarMonteria.addActionListener(new java.awt.event.ActionListener() {
@@ -272,14 +271,14 @@ public class ReporteGeneral extends javax.swing.JFrame {
         jLabel4.setText("Reporte del municipio de Sahagun:");
 
         jtbl_reporteSahagun.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null }
+                new Object[][]{
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
                 },
-                new String[] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
+                new String[]{
+                    "Title 1", "Title 2", "Title 3", "Title 4"
                 }));
         jScrollPane2.setViewportView(jtbl_reporteSahagun);
 
@@ -293,7 +292,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
         jLabel15.setText("Identificacion (niñ@):");
 
-        cbo_opcionesSahagun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buscar", "Eliminar" }));
+        cbo_opcionesSahagun.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Buscar", "Eliminar"}));
 
         btn_aceptarSahagun.setText("ACEPTAR");
         btn_aceptarSahagun.addActionListener(new java.awt.event.ActionListener() {
@@ -414,14 +413,14 @@ public class ReporteGeneral extends javax.swing.JFrame {
         jLabel5.setText("Reporte del municipio de Lorica:");
 
         jtbl_reporteLorica.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][] {
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null },
-                        { null, null, null, null }
+                new Object[][]{
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null},
+                    {null, null, null, null}
                 },
-                new String[] {
-                        "Title 1", "Title 2", "Title 3", "Title 4"
+                new String[]{
+                    "Title 1", "Title 2", "Title 3", "Title 4"
                 }));
         jScrollPane3.setViewportView(jtbl_reporteLorica);
 
@@ -435,7 +434,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
         jLabel13.setText("Identificacion (niñ@):");
 
-        cbo_opcionesLorica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buscar", "Eliminar" }));
+        cbo_opcionesLorica.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Buscar", "Eliminar"}));
 
         btn_aceptarLorica.setText("ACEPTAR");
         btn_aceptarLorica.addActionListener(new java.awt.event.ActionListener() {
@@ -625,22 +624,23 @@ public class ReporteGeneral extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     //Mostrar datos en las tablasss
-    private void cargarInfoMonteria(){
+    private void cargarInfoMonteria() {
         Informacion temp = manejo.getCabeza();
-        while(temp != null){
-                if(temp.getMunicipio().equals("Monteria")){
-                        String nombreNino = temp.getNombreNino();
-                        int idNino = temp.getIdentificacionNino();
-                        int peso = temp.getPeso();
-                        int estatura = temp.getEstatura();
-                        int edad = temp.getEdad();
-                        String representante = temp.getNomRepresentante();
-                        int idRepresentante = temp.getIdRepresentante();
-                        String parentesco = temp.getParentesco();
+        while (temp != null) {
+            if (temp.getMunicipio().equals("Monteria")) {
+                String nombreNino = temp.getNombreNino();
+                int idNino = temp.getIdentificacionNino();
+                int peso = temp.getPeso();
+                int estatura = temp.getEstatura();
+                int edad = temp.getEdad();
+                String representante = temp.getNomRepresentante();
+                int idRepresentante = temp.getIdRepresentante();
+                String parentesco = temp.getParentesco();
 
-                        Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
-                        modeloMonteria.addRow(listar);
-                }
+                Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
+                modeloMonteria.addRow(listar);
+                temp = temp.getSiguiente();
+            }
         }
     }
 

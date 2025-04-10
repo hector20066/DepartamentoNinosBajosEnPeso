@@ -4,6 +4,9 @@
  */
 package vistas;
 
+import com.sun.jdi.connect.Connector;
+import javax.swing.JOptionPane;
+import javax.swing.event.ListDataEvent;
 import manejo.*;
 
 /**
@@ -356,20 +359,101 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void llenar(Informacion informacion){
+        String nino = txt_nombreNino.getText();
+        int idNino = Integer.parseInt(txt_identificacionNino.getText());
+        int edad = Integer.parseInt(txt_edad.getText());
+        int estatura = Integer.parseInt(txt_estatura.getText());
+        int peso = Integer.parseInt(txt_peso.getText());
+        int numRegistroCivil = Integer.parseInt(txt_registroCivil.getText());
+        String municipio = cbo_municipio.getSelectedItem().toString();
+        String nomRepresentante = txt_representante.getText();
+        String parentesco = cbo_parentesco.getSelectedItem().toString();
+        int idRepresentante = Integer.parseInt(txt_idRepresentante.getText());
+
+        if(parentesco.equals("Otro")){ //Se verifica cual es el parentesco
+            parentesco = txt_cual.getText();
+
+            informacion.setNombreNino(nino);
+            informacion.setIdentificacionNino(idNino);
+            informacion.setEdad(edad);
+            informacion.setEstatura(estatura);
+            informacion.setPeso(peso);
+            informacion.setNumRegistroCivil(numRegistroCivil);
+            informacion.setMunicipio(municipio);
+            informacion.setNomRepresentante(nomRepresentante);
+            informacion.setParentesco(parentesco);
+            informacion.setIdRepresentante(idRepresentante);
+        }
+        
+    }
+
+    private void limpiarCampos(){
+        txt_nombreNino.setText("");
+        txt_identificacionNino.setText("");
+        txt_edad.setText("");
+        txt_estatura.setText("");
+        txt_peso.setText("");
+        txt_registroCivil.setText("");
+        cbo_municipio.setSelectedIndex(0);
+        txt_representante.setText("");
+        txt_idRepresentante.setText("");
+        cbo_parentesco.setSelectedIndex(0);
+        txt_cual.setText("");
+        txt_buscar.setText("");
+        cbo_opciones.setSelectedIndex(0);
+    }
+
     private void btn_guardarCabezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCabezaActionPerformed
-        // TODO add your handling code here:
+        try {
+            Informacion informacion = new Informacion();
+
+            llenar(informacion);
+            manejo.agregarACabeza(informacion);
+
+            limpiarCampos();
+            JOptionPane.showMessageDialog(null, "Se ha guardado la informacion del niño correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar la informacion", null, JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btn_guardarCabezaActionPerformed
 
     private void btn_guardarMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarMedioActionPerformed
-        // TODO add your handling code here:
+        try {
+            int identificacion = Integer.parseInt(txt_identificacionNino.getText());
+
+            Informacion informacion = manejo.buscar(identificacion);
+            Informacion guardarInfo;
+
+            if(informacion != null){
+                guardarInfo = new Informacion();
+
+                llenar(guardarInfo);
+
+                manejo.agregarEntreNodos(informacion, guardarInfo);
+                limpiarCampos();
+                JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al guargar la informacion entre dos nodos", null, JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btn_guardarMedioActionPerformed
 
     private void btn_guardarFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarFinalActionPerformed
-        // TODO add your handling code here:
+        try {
+            
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btn_guardarFinalActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
-        // TODO add your handling code here:
+        try {
+            
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     private void btn_VerReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerReporteActionPerformed

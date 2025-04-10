@@ -24,8 +24,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
      */
     public ReporteGeneral() {
         initComponents();
-        String titulos[] = new String[]{"NOMBRE DEL NIÑ@", "IDENTIFICACION(NIÑ@)", "PESO", "ESTATURA", "EDAD",
-            "REPRESENTANTE", "IDENTIFICACION", "PARENTESCO"};
+        String titulos[] = new String[]{"NOMBRE DEL NIÑ@", "IDENTIFICACION(NIÑ@)", "PESO", "ESTATURA", "EDAD", "REPRESENTANTE", "IDENTIFICACION", "PARENTESCO"};
         modeloMonteria.setColumnIdentifiers(titulos);
         jtbl_reporteMonterial.setModel(modeloMonteria);
         modeloSahagun.setColumnIdentifiers(titulos);

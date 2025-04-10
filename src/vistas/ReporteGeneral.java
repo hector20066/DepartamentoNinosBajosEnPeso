@@ -18,6 +18,8 @@ public class ReporteGeneral extends javax.swing.JFrame {
     private DepartamentoCuidado departamento;
     DefaultTableModel modeloMonteria = new DefaultTableModel();
     DefaultTableModel modeloSahagun = new DefaultTableModel();
+    DefaultTableModel modeloLorica = new DefaultTableModel();
+
 
     /**
      * Creates new form ReporteGeneral
@@ -30,6 +32,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
         jtbl_reporteMonterial.setModel(modeloMonteria);
         modeloSahagun.setColumnIdentifiers(titulos);
         jtbl_reporteSahagun.setModel(modeloSahagun);
+        jtbl_reporteLorica.setModel(modeloLorica);
     }
 
     public void setDepartamentoCuidado(DepartamentoCuidado departamento) {

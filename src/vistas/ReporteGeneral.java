@@ -608,8 +608,8 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
     private void btn_aceptarSahagunActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_aceptarSahagunActionPerformed
         try {
-                int identificacion = Integer.parseInt(txt_idNinoMonteria.getText());
-                int opcion = cbo_opcionesMonteria.getSelectedIndex();
+                int identificacion = Integer.parseInt(txt_idNinoSahagun.getText());
+                int opcion = cbo_opcionesSahagun.getSelectedIndex();
     
                 Informacion informacion = manejo.buscar(identificacion);
     
@@ -628,10 +628,10 @@ public class ReporteGeneral extends javax.swing.JFrame {
                             String parentesco = informacion.getParentesco();
     
                             Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
-                            modeloMonteria.addRow(listar);
+                            modeloSahagun.addRow(listar);
                         } else {
                             JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
-                            txt_idNinoMonteria.grabFocus();
+                            txt_idNinoSahagun.grabFocus();
                         }
                         break;
                     case 1: //Eliminar
@@ -640,7 +640,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Se ha eliminado la informacion del niño correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                         } else {
                             JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
-                            txt_idNinoMonteria.grabFocus();
+                            txt_idNinoSahagun.grabFocus();
                         }
                         break;
                 }
@@ -651,8 +651,8 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
     private void btn_aceptarLoricaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_aceptarLoricaActionPerformed
         try {
-                int identificacion = Integer.parseInt(txt_idNinoMonteria.getText());
-                int opcion = cbo_opcionesMonteria.getSelectedIndex();
+                int identificacion = Integer.parseInt(txt_idNinoLorica.getText());
+                int opcion = cbo_opcionesLorica.getSelectedIndex();
     
                 Informacion informacion = manejo.buscar(identificacion);
     
@@ -671,10 +671,10 @@ public class ReporteGeneral extends javax.swing.JFrame {
                             String parentesco = informacion.getParentesco();
     
                             Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
-                            modeloMonteria.addRow(listar);
+                            modeloLorica.addRow(listar);
                         } else {
                             JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
-                            txt_idNinoMonteria.grabFocus();
+                            txt_idNinoLorica.grabFocus();
                         }
                         break;
                     case 1: //Eliminar
@@ -683,7 +683,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                             JOptionPane.showMessageDialog(null, "Se ha eliminado la informacion del niño correctamente", null, JOptionPane.INFORMATION_MESSAGE);
                         } else {
                             JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
-                            txt_idNinoMonteria.grabFocus();
+                            txt_idNinoLorica.grabFocus();
                         }
                         break;
                 }

@@ -5,7 +5,6 @@
 package vistas;
 
 import javax.swing.table.DefaultTableModel;
-
 import manejo.*;
 
 /**
@@ -32,7 +31,11 @@ public class ReporteGeneral extends javax.swing.JFrame {
         jtbl_reporteMonterial.setModel(modeloMonteria);
         modeloSahagun.setColumnIdentifiers(titulos);
         jtbl_reporteSahagun.setModel(modeloSahagun);
+        modeloLorica.setColumnIdentifiers(titulos);
         jtbl_reporteLorica.setModel(modeloLorica);
+
+        //Se cargan los datos en las tablas de los departamentos
+        cargarInfoMonteria();
     }
 
     public void setDepartamentoCuidado(DepartamentoCuidado departamento) {
@@ -620,6 +623,26 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    //Mostrar datos en las tablasss
+    private void cargarInfoMonteria(){
+        Informacion temp = manejo.getCabeza();
+        while(temp != null){
+                if(temp.getMunicipio().equals("Monteria")){
+                        String nombreNino = temp.getNombreNino();
+                        int idNino = temp.getIdentificacionNino();
+                        int peso = temp.getPeso();
+                        int estatura = temp.getEstatura();
+                        int edad = temp.getEdad();
+                        String representante = temp.getNomRepresentante();
+                        int idRepresentante = temp.getIdRepresentante();
+                        String parentesco = temp.getParentesco();
+
+                        Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
+                        modeloMonteria.addRow(listar);
+                }
+        }
+    }
 
     private void btn_aceptarMonteriaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_aceptarMonteriaActionPerformed
 

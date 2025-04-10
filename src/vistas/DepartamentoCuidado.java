@@ -434,7 +434,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
 
                 manejo.agregarEntreNodos(informacion, guardarInfo);
                 limpiarCampos();
-                JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente entre dos nodos", null, JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (Exception e) {
             e.printStackTrace();

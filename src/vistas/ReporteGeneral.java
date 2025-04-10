@@ -608,16 +608,88 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
     private void btn_aceptarSahagunActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_aceptarSahagunActionPerformed
         try {
-
-        } catch (Exception e) {
-        }
+                int identificacion = Integer.parseInt(txt_idNinoMonteria.getText());
+                int opcion = cbo_opcionesMonteria.getSelectedIndex();
+    
+                Informacion informacion = manejo.buscar(identificacion);
+    
+                switch (opcion) {
+                    case 0: // buscar
+                        if (informacion != null && informacion.getMunicipio().equals("Sahagún")) {
+                            modeloSahagun.setRowCount(0); // Limpiar la tabla antes de mostrar la informacion encontrada
+    
+                            String nombreNino = informacion.getNombreNino();
+                            int idNino = informacion.getIdentificacionNino();
+                            int peso = informacion.getPeso();
+                            int estatura = informacion.getEstatura();
+                            int edad = informacion.getEdad();
+                            String representante = informacion.getNomRepresentante();
+                            int idRepresentante = informacion.getIdRepresentante();
+                            String parentesco = informacion.getParentesco();
+    
+                            Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
+                            modeloMonteria.addRow(listar);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
+                            txt_idNinoMonteria.grabFocus();
+                        }
+                        break;
+                    case 1: //Eliminar
+                        if (informacion != null) {
+                            manejo.eliminar(informacion);
+                            JOptionPane.showMessageDialog(null, "Se ha eliminado la informacion del niño correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
+                            txt_idNinoMonteria.grabFocus();
+                        }
+                        break;
+                }
+            } catch (Exception e) {
+    
+            }
     }// GEN-LAST:event_btn_aceptarSahagunActionPerformed
 
     private void btn_aceptarLoricaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_aceptarLoricaActionPerformed
         try {
-
-        } catch (Exception e) {
-        }
+                int identificacion = Integer.parseInt(txt_idNinoMonteria.getText());
+                int opcion = cbo_opcionesMonteria.getSelectedIndex();
+    
+                Informacion informacion = manejo.buscar(identificacion);
+    
+                switch (opcion) {
+                    case 0: // buscar
+                        if (informacion != null && informacion.getMunicipio().equals("Lorica")) {
+                            modeloLorica.setRowCount(0); // Limpiar la tabla antes de mostrar la informacion encontrada
+    
+                            String nombreNino = informacion.getNombreNino();
+                            int idNino = informacion.getIdentificacionNino();
+                            int peso = informacion.getPeso();
+                            int estatura = informacion.getEstatura();
+                            int edad = informacion.getEdad();
+                            String representante = informacion.getNomRepresentante();
+                            int idRepresentante = informacion.getIdRepresentante();
+                            String parentesco = informacion.getParentesco();
+    
+                            Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
+                            modeloMonteria.addRow(listar);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
+                            txt_idNinoMonteria.grabFocus();
+                        }
+                        break;
+                    case 1: //Eliminar
+                        if (informacion != null) {
+                            manejo.eliminar(informacion);
+                            JOptionPane.showMessageDialog(null, "Se ha eliminado la informacion del niño correctamente", null, JOptionPane.INFORMATION_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No se ha encontrado la informacion, por favor verifique la identificacion", null, JOptionPane.ERROR_MESSAGE);
+                            txt_idNinoMonteria.grabFocus();
+                        }
+                        break;
+                }
+            } catch (Exception e) {
+    
+            }
     }// GEN-LAST:event_btn_aceptarLoricaActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_regresarActionPerformed

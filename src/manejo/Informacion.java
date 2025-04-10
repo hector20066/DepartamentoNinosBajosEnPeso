@@ -66,11 +66,10 @@ public class Informacion {
         this.idRepresentante = idRepresentante;
     }
 
-    public void setSiguiente(Informacion Siguiente){
+    public void setSiguiente(Informacion siguiente){
         this.siguiente = siguiente;
     }
-
-    //Metodos getters
+    
     public String getNombreNino() {
         return nombreNino;
     }

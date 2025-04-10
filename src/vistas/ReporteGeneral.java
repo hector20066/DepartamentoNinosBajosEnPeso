@@ -690,7 +690,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
     }// GEN-LAST:event_btn_aceptarMonteriaActionPerformed
 
     private void btn_aceptarSahagunActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_aceptarSahagunActionPerformed
-        // TODO add your handling code here:
+        
     }// GEN-LAST:event_btn_aceptarSahagunActionPerformed
 
     private void btn_aceptarLoricaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_aceptarLoricaActionPerformed

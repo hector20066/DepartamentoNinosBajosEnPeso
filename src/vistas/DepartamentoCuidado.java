@@ -475,7 +475,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_VerReporteActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_btn_salirActionPerformed
 
     /**

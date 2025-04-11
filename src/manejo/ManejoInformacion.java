@@ -128,13 +128,44 @@ public class ManejoInformacion {
         }
     }
 
+    //Metodos para contar los niños con bajo peso en cada municipio
     public int bajoPesoMonteria(){
         int contador = 0;
         Informacion temporal = getCabeza();
         while (temporal != null) { 
-            if(temporal.getPeso() < 6 && temporal.getEdad() < 6){
-                contador++;
-                temporal = temporal.getSiguiente();
+            if(temporal.getMunicipio().equals("Monteria")){
+                if(((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 15) || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 25)){
+                    contador++;
+                    temporal = temporal.getSiguiente();
+                }
+            }
+        }
+        return contador;
+    }
+
+    public int bajopesoSahagun(){
+        int contador = 0;
+        Informacion temporal = getCabeza();
+        while(temporal != null){
+            if(temporal.getMunicipio().equals("Sahagun")){
+                if(((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 10) || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 20)){
+                    contador++;
+                    temporal = temporal.getSiguiente();
+                }
+            }
+        }
+        return contador;
+    }
+
+    public int bajoPesoLorica(){
+        int contador = 0;
+        Informacion temporal = getCabeza();
+        while(temporal != null){
+            if(temporal.getMunicipio().equals("Lorica")){
+                if(((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 10) || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 20)){
+                    contador++;
+                    temporal = temporal.getSiguiente();
+                }
             }
         }
         return contador;

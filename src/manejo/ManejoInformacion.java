@@ -127,4 +127,17 @@ public class ManejoInformacion {
             ni = ni.getSiguiente();
         }
     }
+
+    public int bajoPesoMonteria(){
+        int contador = 0;
+        Informacion temporal = getCabeza();
+        while (temporal != null) { 
+            if(temporal.getPeso() < 6 && temporal.getEdad() < 6){
+                contador++;
+                temporal = temporal.getSiguiente();
+            }
+        }
+        return contador;
+    }
+
 }

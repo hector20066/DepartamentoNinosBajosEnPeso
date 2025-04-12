@@ -13,7 +13,7 @@ public class Informacion {
     private String nombreNino;
     private int identificacionNino;
     private int edad;
-    private int estatura;
+    private float estatura;
     private int peso;
     private int numRegistroCivil;
     private String municipio;
@@ -38,7 +38,7 @@ public class Informacion {
         this.edad = edad;
     }
 
-    public void setEstatura(int estatura){
+    public void setEstatura(float estatura){
         this.estatura = estatura;
     }
 
@@ -82,7 +82,7 @@ public class Informacion {
         return edad;
     }
 
-    public int getEstatura() {
+    public float getEstatura() {
         return estatura;
     }
 

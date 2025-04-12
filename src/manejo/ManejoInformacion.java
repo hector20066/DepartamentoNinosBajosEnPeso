@@ -174,12 +174,13 @@ public class ManejoInformacion {
         return contador;
     }
 
-    public float EstaturaBajaMonteria() {
+    // Metodos para contar los niños con baja estatura en cada municipio
+    public int estaturaBajaMonteria() {
         int contador = 0;
         Informacion temporal = getCabeza();
         while (temporal != cabeza) {
             if (temporal.getMunicipio().equals("Monteria")) {
-                if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() < 1)) {
+                if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() <= 1.0)) {
                     contador++;
                     temporal = temporal.getSiguiente();
                 }
@@ -187,12 +188,13 @@ public class ManejoInformacion {
         }
         return contador;
     }
-    public float EstaturaBajaSagahun() {
+
+    public float estaturaBajaSagahun() {
         int contador = 0;
         Informacion temporal = getCabeza();
         while (temporal != cabeza) {
             if (temporal.getMunicipio().equals("Sahagun")) {
-                if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() < 1)) {
+                if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() <= 1.0)) {
                     contador++;
                     temporal = temporal.getSiguiente();
                 }
@@ -200,12 +202,13 @@ public class ManejoInformacion {
         }
         return contador;
     }
+    
     public float EstaturaBajaLorica() {
         int contador = 0;
         Informacion temporal = getCabeza();
         while (temporal != cabeza) {
             if (temporal.getMunicipio().equals("Lorica")) {
-                if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() < 1)) {
+                if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() <= 1.0)) {
                     contador++;
                     temporal = temporal.getSiguiente();
                 }

@@ -67,9 +67,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         cbo_parentesco = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         txt_cual = new javax.swing.JTextField();
-        btn_guardarCabeza = new javax.swing.JButton();
-        btn_guardarMedio = new javax.swing.JButton();
-        btn_guardarFinal = new javax.swing.JButton();
+        btn_guardarDatos = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -79,6 +77,8 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         btn_VerReporte = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        cbo_guardado = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -123,25 +123,10 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
 
         jLabel16.setText("¿Cual?:");
 
-        btn_guardarCabeza.setText("GUARDAR AL INICIO");
-        btn_guardarCabeza.addActionListener(new java.awt.event.ActionListener() {
+        btn_guardarDatos.setText("GUARDAR DATOS");
+        btn_guardarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardarCabezaActionPerformed(evt);
-            }
-        });
-
-        btn_guardarMedio.setText("GUARDAR ENTRE DATOS EXISTENTES");
-        btn_guardarMedio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardarMedioActionPerformed(evt);
-            }
-        });
-
-        btn_guardarFinal.setText("GUARDAR AL FINAL");
-        btn_guardarFinal.addActionListener(new java.awt.event.ActionListener() {
-
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardarFinalActionPerformed(evt);
+                btn_guardarDatosActionPerformed(evt);
             }
         });
 
@@ -173,6 +158,11 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
             }
         });
 
+        jLabel19.setText("m.");
+
+        cbo_guardado.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        cbo_guardado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "GUARDAR EN CABEZA", "GUARDAR ENTRE DOS NODOS", "GUARDAR AL FINAL" }));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -183,23 +173,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(49, 49, 49)
-                                        .addComponent(jLabel9)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_estatura, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(48, 48, 48)
-                                        .addComponent(jLabel10)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_registroCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(56, 56, 56)
-                                        .addComponent(jLabel11)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbo_municipio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -211,9 +185,27 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
                                         .addGap(50, 50, 50)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(txt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(49, 49, 49)
+                                        .addComponent(jLabel9)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_estatura, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel19)
+                                        .addGap(68, 68, 68)
+                                        .addComponent(jLabel10)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txt_registroCivil, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(60, 60, 60)
+                                        .addComponent(jLabel11)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbo_municipio, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,12 +230,10 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(txt_idRepresentante, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(105, 105, 105)
-                                .addComponent(btn_guardarCabeza, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(39, 39, 39)
-                                .addComponent(btn_guardarMedio)
-                                .addGap(38, 38, 38)
-                                .addComponent(btn_guardarFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(215, 215, 215)
+                                .addComponent(cbo_guardado, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(btn_guardarDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 21, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
@@ -307,7 +297,8 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
                     .addComponent(jLabel10)
                     .addComponent(txt_registroCivil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11)
-                    .addComponent(cbo_municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbo_municipio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -324,9 +315,8 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
                     .addComponent(txt_cual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_guardarCabeza)
-                    .addComponent(btn_guardarMedio)
-                    .addComponent(btn_guardarFinal))
+                    .addComponent(btn_guardarDatos)
+                    .addComponent(cbo_guardado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -364,7 +354,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         String nino = txt_nombreNino.getText();
         int idNino = Integer.parseInt(txt_identificacionNino.getText());
         int edad = Integer.parseInt(txt_edad.getText());
-        int estatura = Integer.parseInt(txt_estatura.getText());
+        float estatura = Float.parseFloat(txt_estatura.getText());
         int peso = Integer.parseInt(txt_peso.getText());
         int numRegistroCivil = Integer.parseInt(txt_registroCivil.getText());
         String municipio = cbo_municipio.getSelectedItem().toString();
@@ -372,30 +362,21 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         String parentesco = cbo_parentesco.getSelectedItem().toString();
         int idRepresentante = Integer.parseInt(txt_idRepresentante.getText());
 
+        informacion.setNombreNino(nino);
+        informacion.setIdentificacionNino(idNino);
+        informacion.setEdad(edad);
+        informacion.setEstatura(estatura);
+        informacion.setPeso(peso);
+        informacion.setNumRegistroCivil(numRegistroCivil);
+        informacion.setMunicipio(municipio);
+        informacion.setNomRepresentante(nomRepresentante);
+        informacion.setIdRepresentante(idRepresentante);
+
         if(parentesco.equals("Otro")){ //Se verifica cual es el parentesco
             parentesco = txt_cual.getText();
-
-            informacion.setNombreNino(nino);
-            informacion.setIdentificacionNino(idNino);
-            informacion.setEdad(edad);
-            informacion.setEstatura(estatura);
-            informacion.setPeso(peso);
-            informacion.setNumRegistroCivil(numRegistroCivil);
-            informacion.setMunicipio(municipio);
-            informacion.setNomRepresentante(nomRepresentante);
             informacion.setParentesco(parentesco);
-            informacion.setIdRepresentante(idRepresentante);
         }else{
-            informacion.setNombreNino(nino);
-            informacion.setIdentificacionNino(idNino);
-            informacion.setEdad(edad);
-            informacion.setEstatura(estatura);
-            informacion.setPeso(peso);
-            informacion.setNumRegistroCivil(numRegistroCivil);
-            informacion.setMunicipio(municipio);
-            informacion.setNomRepresentante(nomRepresentante);
             informacion.setParentesco(parentesco);
-            informacion.setIdRepresentante(idRepresentante);
         }
     }
 
@@ -433,57 +414,49 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         }
     }
 
-    private void btn_guardarCabezaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarCabezaActionPerformed
+    private void btn_guardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarDatosActionPerformed
         try {
-            Informacion informacion = new Informacion();
 
-            llenar(informacion);
-            manejo.agregarACabeza(informacion);
-
-            limpiarCampos();
-            JOptionPane.showMessageDialog(null, "Se ha guardado la informacion del niño correctamente", null, JOptionPane.INFORMATION_MESSAGE);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al tratar de guardar la informacion", null, JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btn_guardarCabezaActionPerformed
-
-    private void btn_guardarMedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarMedioActionPerformed
-        try {
-            int identificacion = Integer.parseInt(txt_identificacionNino.getText());
-
-            Informacion informacion = manejo.buscar(identificacion);
+            int opcion = cbo_guardado.getSelectedIndex();
             Informacion guardarInfo;
 
-            if(informacion != null){
-                guardarInfo = new Informacion();
+            switch(opcion){
+                case 0:
+                    guardarInfo = new Informacion();
+                    llenar(guardarInfo);
+                    manejo.agregarACabeza(guardarInfo);
+                    limpiarCampos();
+                    JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente al inicio de la lista", null, JOptionPane.INFORMATION_MESSAGE);
+                    break;
+                case 1:
+                    int identificacion = Integer.parseInt(txt_identificacionNino.getText());
+                    Informacion informacion = manejo.buscar(identificacion);
 
-                llenar(guardarInfo);
+                    if(informacion != null){
+                        guardarInfo = new Informacion();
 
-                manejo.agregarEntreNodos(informacion, guardarInfo);
-                limpiarCampos();
-                JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente entre dos nodos", null, JOptionPane.INFORMATION_MESSAGE);
+                        llenar(guardarInfo);
+                        manejo.agregarEntreNodos(informacion, guardarInfo);
+                        limpiarCampos();
+                        JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente entre dos nodos", null, JOptionPane.INFORMATION_MESSAGE);
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No existe la identificacion en la lista", null, JOptionPane.ERROR_MESSAGE);
+                    }
+                    break;
+                case 2:
+                    guardarInfo = new Informacion();
+
+                    llenar(guardarInfo);
+                    manejo.agregarNodo(guardarInfo);
+                    limpiarCampos();
+                    JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente al final de la lista", null, JOptionPane.INFORMATION_MESSAGE);
+                    break;
             }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Ha ocurrido un error al guargar la informacion entre dos nodos", null, JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_btn_guardarMedioActionPerformed
-
-    private void btn_guardarFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarFinalActionPerformed
-        try {
-            Informacion guardarInfo = new Informacion();
-            llenar(guardarInfo);
-
-            manejo.agregarNodo(guardarInfo);
-            limpiarCampos();
-            JOptionPane.showMessageDialog(null, "Se ha guardado la informacion correctamente entre dos nodos", null, JOptionPane.INFORMATION_MESSAGE);
-        } catch (Exception e) {
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Ha ocurrido un error al guargar la informacion entre dos nodos", null, JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btn_guardarFinalActionPerformed
+    }//GEN-LAST:event_btn_guardarDatosActionPerformed
 
     private void btn_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_aceptarActionPerformed
         try {
@@ -568,10 +541,9 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_VerReporte;
     private javax.swing.JButton btn_aceptar;
-    private javax.swing.JButton btn_guardarCabeza;
-    private javax.swing.JButton btn_guardarFinal;
-    private javax.swing.JButton btn_guardarMedio;
+    private javax.swing.JButton btn_guardarDatos;
     private javax.swing.JButton btn_salir;
+    private javax.swing.JComboBox<String> cbo_guardado;
     private javax.swing.JComboBox<String> cbo_municipio;
     private javax.swing.JComboBox<String> cbo_opciones;
     private javax.swing.JComboBox<String> cbo_parentesco;
@@ -585,6 +557,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

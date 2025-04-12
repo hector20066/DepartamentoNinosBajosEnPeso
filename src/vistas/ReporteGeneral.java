@@ -16,6 +16,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
     ManejoInformacion manejo = ManejoInformacion.getManejo();
     private DepartamentoCuidado departamento;
+
     DefaultTableModel modeloMonteria = new DefaultTableModel();
     DefaultTableModel modeloSahagun = new DefaultTableModel();
     DefaultTableModel modeloLorica = new DefaultTableModel();
@@ -25,13 +26,19 @@ public class ReporteGeneral extends javax.swing.JFrame {
      */
     public ReporteGeneral() {
         initComponents();
+
         String titulos[] = new String[]{"NOMBRE DEL NIÑ@", "IDENTIFICACION(NIÑ@)", "PESO", "ESTATURA", "EDAD", "REPRESENTANTE", "IDENTIFICACION", "PARENTESCO"};
+        //Modelo de la tabla pra monteria
         modeloMonteria.setColumnIdentifiers(titulos);
         jtbl_reporteMonterial.setModel(modeloMonteria);
+        //Modelo de la tabla para sahagun
         modeloSahagun.setColumnIdentifiers(titulos);
         jtbl_reporteSahagun.setModel(modeloSahagun);
+        //Modelo de la tabla pra lorica
         modeloLorica.setColumnIdentifiers(titulos);
         jtbl_reporteLorica.setModel(modeloLorica);
+
+        cargarNinos(); //Metodo para cargar los niños bajos en estatura y peso
 
         //Se cargan los datos en las tablas de los departamentos
         cargarInfoMonteria();
@@ -502,6 +509,19 @@ public class ReporteGeneral extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //Metodo para cargar los niños bajos en peso y estatura por cada municipio
+    private void cargarNinos(){
+        //Cargar la cantidad de niños que hay con bajo peso en cada municipio
+        txt_bajoPesoMonteria.setText(String.valueOf(manejo.bajoPesoMonteria()));
+        txt_bajoPesoSahagun.setText(String.valueOf(manejo.bajopesoSahagun()));
+        txt_bajoPesoLorica.setText(String.valueOf(manejo.bajoPesoLorica()));
+
+        //Cargar la cantidad de niños que hay con baja estatura en cada municipio
+        txt_bajoTallaMonteria.setText(String.valueOf(manejo.estaturaBajaMonteria()));
+        txt_bajoTallaSahagun.setText(String.valueOf(manejo.estaturaBajaSagahun()));
+        txt_bajoTallaLorica.setText(String.valueOf(manejo.EstaturaBajaLorica()));
+    }
+    
     //Mostrar datos en las tablas
     private void cargarInfoMonteria() {
         Informacion temp = manejo.getCabeza();
@@ -510,7 +530,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                 String nombreNino = temp.getNombreNino();
                 int idNino = temp.getIdentificacionNino();
                 int peso = temp.getPeso();
-                int estatura = temp.getEstatura();
+                float estatura = temp.getEstatura();
                 int edad = temp.getEdad();
                 String representante = temp.getNomRepresentante();
                 int idRepresentante = temp.getIdRepresentante();
@@ -530,7 +550,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                 String nombreNino = temp.getNombreNino();
                 int idNino = temp.getIdentificacionNino();
                 int peso = temp.getPeso();
-                int estatura = temp.getEstatura();
+                float estatura = temp.getEstatura();
                 int edad = temp.getEdad();
                 String representante = temp.getNomRepresentante();
                 int idRepresentante = temp.getIdRepresentante();
@@ -550,7 +570,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                 String nombreNino = temp.getNombreNino();
                 int idNino = temp.getIdentificacionNino();
                 int peso = temp.getPeso();
-                int estatura = temp.getEstatura();
+                float estatura = temp.getEstatura();
                 int edad = temp.getEdad();
                 String representante = temp.getNomRepresentante();
                 int idRepresentante = temp.getIdRepresentante();
@@ -578,7 +598,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                         String nombreNino = informacion.getNombreNino();
                         int idNino = informacion.getIdentificacionNino();
                         int peso = informacion.getPeso();
-                        int estatura = informacion.getEstatura();
+                        float estatura = informacion.getEstatura();
                         int edad = informacion.getEdad();
                         String representante = informacion.getNomRepresentante();
                         int idRepresentante = informacion.getIdRepresentante();
@@ -621,7 +641,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                             String nombreNino = informacion.getNombreNino();
                             int idNino = informacion.getIdentificacionNino();
                             int peso = informacion.getPeso();
-                            int estatura = informacion.getEstatura();
+                            float estatura = informacion.getEstatura();
                             int edad = informacion.getEdad();
                             String representante = informacion.getNomRepresentante();
                             int idRepresentante = informacion.getIdRepresentante();
@@ -664,7 +684,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
                             String nombreNino = informacion.getNombreNino();
                             int idNino = informacion.getIdentificacionNino();
                             int peso = informacion.getPeso();
-                            int estatura = informacion.getEstatura();
+                            float estatura = informacion.getEstatura();
                             int edad = informacion.getEdad();
                             String representante = informacion.getNomRepresentante();
                             int idRepresentante = informacion.getIdRepresentante();

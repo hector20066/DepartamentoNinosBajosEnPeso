@@ -15,7 +15,7 @@ import manejo.*;
  */
 public class DepartamentoCuidado extends javax.swing.JFrame {
 
-    private ReporteGeneral reporte;
+    
     ManejoInformacion manejo = ManejoInformacion.getManejo();
 
     /**
@@ -23,10 +23,6 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
      */
     public DepartamentoCuidado() {
         initComponents();
-    }
-
-    public void setReportes(ReporteGeneral reporte) {
-        this.reporte = reporte;
     }
 
     /**
@@ -410,7 +406,7 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
         if(informacion.getParentesco().equals("Madre") || informacion.getParentesco().equals("Padre")){
             cbo_parentesco.setSelectedItem(informacion.getParentesco());
         }else{
-            txt_buscar.setText(informacion.getParentesco());
+            txt_cual.setText(informacion.getParentesco());
         }
     }
 
@@ -492,11 +488,15 @@ public class DepartamentoCuidado extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_aceptarActionPerformed
 
     private void btn_VerReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VerReporteActionPerformed
-        ReporteGeneral reporte = new ReporteGeneral();
-        reporte.setVisible(true);
-        reporte.setLocationRelativeTo(null);
-        reporte.setResizable(false);
-        this.setVisible(false);
+        try{
+            ReporteGeneral reporte = new ReporteGeneral();
+            reporte.setVisible(true);
+            reporte.setLocationRelativeTo(null);
+            reporte.setResizable(false);
+            this.setVisible(false);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_btn_VerReporteActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed

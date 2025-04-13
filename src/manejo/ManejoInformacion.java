@@ -134,12 +134,11 @@ public class ManejoInformacion {
         Informacion temporal = getCabeza();
         while (temporal != null) {
             if (temporal.getMunicipio().equals("Monteria")) {
-                if (((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 15)
-                        || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 25)) {
+                if (((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 15) || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 25)) {
                     contador++;
-                    temporal = temporal.getSiguiente();
                 }
             }
+            temporal = temporal.getSiguiente();
         }
         return contador;
     }
@@ -149,12 +148,11 @@ public class ManejoInformacion {
         Informacion temporal = getCabeza();
         while (temporal != null) {
             if (temporal.getMunicipio().equals("Sahagun")) {
-                if (((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 10)
-                        || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 20)) {
+                if (((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 10) || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 20)) {
                     contador++;
-                    temporal = temporal.getSiguiente();
                 }
             }
+            temporal = temporal.getSiguiente();
         }
         return contador;
     }
@@ -164,12 +162,11 @@ public class ManejoInformacion {
         Informacion temporal = getCabeza();
         while (temporal != null) {
             if (temporal.getMunicipio().equals("Lorica")) {
-                if (((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 10)
-                        || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 20)) {
+                if (((temporal.getEdad() >= 2 && temporal.getEdad() <= 3) && temporal.getPeso() < 10) || ((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getPeso() < 20)) {
                     contador++;
-                    temporal = temporal.getSiguiente();
                 }
             }
+            temporal = temporal.getSiguiente();
         }
         return contador;
     }
@@ -182,9 +179,9 @@ public class ManejoInformacion {
             if (temporal.getMunicipio().equals("Monteria")) {
                 if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() <= 1.0)) {
                     contador++;
-                    temporal = temporal.getSiguiente();
                 }
             }
+            temporal = temporal.getSiguiente();
         }
         return contador;
     }
@@ -196,9 +193,9 @@ public class ManejoInformacion {
             if (temporal.getMunicipio().equals("Sahagun")) {
                 if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() <= 1.0)) {
                     contador++;
-                    temporal = temporal.getSiguiente();
                 }
             }
+            temporal = temporal.getSiguiente();
         }
         return contador;
     }
@@ -210,9 +207,9 @@ public class ManejoInformacion {
             if (temporal.getMunicipio().equals("Lorica")) {
                 if (((temporal.getEdad() >= 4 && temporal.getEdad() <= 6) && temporal.getEstatura() <= 1.0)) {
                     contador++;
-                    temporal = temporal.getSiguiente();
                 }
             }
+            temporal = temporal.getSiguiente();
         }
         return contador;
     }

@@ -15,7 +15,6 @@ import manejo.*;
 public class ReporteGeneral extends javax.swing.JFrame {
 
     ManejoInformacion manejo = ManejoInformacion.getManejo();
-    private DepartamentoCuidado departamento;
 
     DefaultTableModel modeloMonteria = new DefaultTableModel();
     DefaultTableModel modeloSahagun = new DefaultTableModel();
@@ -44,10 +43,6 @@ public class ReporteGeneral extends javax.swing.JFrame {
         cargarInfoMonteria();
         cargarInfoSahagun();
         cargarInfoLorica();
-    }
-
-    public void setDepartamentoCuidado(DepartamentoCuidado departamento) {
-        this.departamento = departamento;
     }
 
     /**
@@ -538,8 +533,8 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
                 Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
                 modeloMonteria.addRow(listar);
-                temp = temp.getSiguiente();
             }
+            temp = temp.getSiguiente();
         }
     }
 
@@ -558,8 +553,8 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
                 Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
                 modeloSahagun.addRow(listar);
-                temp = temp.getSiguiente();
             }
+            temp = temp.getSiguiente();
         }
     }
 
@@ -578,8 +573,8 @@ public class ReporteGeneral extends javax.swing.JFrame {
 
                 Object listar[] = new Object[]{nombreNino, idNino, peso, estatura, edad, representante, idRepresentante, parentesco};
                 modeloLorica.addRow(listar);
-                temp = temp.getSiguiente();
             }
+            temp = temp.getSiguiente();
         }
     }
 
@@ -713,6 +708,7 @@ public class ReporteGeneral extends javax.swing.JFrame {
     }// GEN-LAST:event_btn_aceptarLoricaActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_regresarActionPerformed
+        DepartamentoCuidado departamento = new DepartamentoCuidado();
         departamento.setVisible(true);
         departamento.setLocationRelativeTo(null);
         departamento.setResizable(false);

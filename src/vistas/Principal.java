@@ -17,6 +17,6 @@ public class Principal {
         departamento.setVisible(true);
         departamento.setLocationRelativeTo(null);
         departamento.setResizable(false);
-        
+        departamento.setTitle("REGISTRO DE NIÑOS");
     }
 }
